@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quadrant 1</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@vv1.4.0/lib/p5.js" type="text/javascript"></script>
+    <script>
+        let v1 = "Accor—Forme—";
+        let v2 = "Bain &Co— ";
+
+        let v3 = "Precipart—Outpour—";
+        let v4 = "Fiona Krüger— ";
+
+        let v5 = "Myka—Fairmont—";
+        let v6 = "MySupperHero— ";
+
+        let v7 = " Davos Source—";
+        let v8 = "Pernod Ricard—LG— ";
+
+        let v9 = " Harry's—Taylor & Hart—";
+        let v10 = "Ibis Styles—  ";
+
+        let v11 = "Pullman—Walpole—";
+        let v12 = "Shangri-La— ";
+
+        let v13 = " Papier—Waltz—";
+        let v14 = "Novotel—  ";
+
+        let v15 = " Sofitel—";
+        let v16 = "Teva Naot—Miro—  ";
+
+        let v17 = "Wacoal—";
+        let v18 = "Grand Mecure—Greet—  ";
+
+        let v19 = "Elomi—La Maison—";
+        let v20 = "Fantasie— ";
+
+        let v21 = " Mövenpick—";
+        let v22 = "Freya—Mecure—  ";
+
+        let v23 = "Swissotel—";
+        let v24 = "Goddess—MGallery— ";
+
+        let v25 = "Emblems Collection—";
+        let v26 = "City Pantry— ";
+
+        let bg = 225;
+        let sPeed = 25;
+
+        let interval = 1000;
+        let prevTime;
+
+        let xStart1 = 0;
+        let xStart2 = 0;
+        let xStart3 = 0;
+        let xStart4 = 0;
+        let xStart5 = 0;
+        let xStart6 = 0;
+        let xStart7 = 0;
+        let xStart8 = 0;
+        let xStart9 = 0;
+        let xStart10 = 0;
+        let xStart11 = 0;
+        let xStart12 = 0;
+        let xStart13 = 0;
+
+        let sTep = 1;
+        let eNd = false;
+
+        let myFont;
+        function preload() {
+            myFont = loadFont('Canela-Light.woff');
+        }
+
+        function setup() {
+            frameRate(60);
+            createCanvas(400, 400);
+            prevTime = millis();
+        }
+
+        function draw() {
+            background(bg);
+            fill(0);
+            smooth();
+            let fsize = height / 13;
+            textSize(fsize);
+            textFont(myFont);
+            var lineHeight = fsize;
+
+            textAlign(RIGHT, TOP);
+            fill(0);
+            for (let x = xStart1+textWidth(v1+v2+v1+v2)+20; x >= 0; x-= textWidth(v1+v2+v1+v2)) {
+                text(v1 + v2 + v1 + v2, x, 0);
+            }
+
+            for (let x = xStart2+textWidth(v3+v4+v3+v4); x >= 0; x-= textWidth(v3+v4+v3+v4)) {
+                text(v3 + v4 + v3 + v4, x, lineHeight);
+            }
+
+            for (let x = xStart3+textWidth(v5+v6+v5+v6)+60; x >= 0; x-= textWidth(v5+v6+v5+v6)) {
+                text(v5 + v6 + v5 + v6, x, lineHeight * 2);
+            }
+
+            for (let x = xStart4+textWidth(v7+v8+v7+v8); x >= 0; x-= textWidth(v7+v8+v7+v8)) {
+                text(v7 + v8 + v7 + v8, x, lineHeight * 3);
+            }
+
+            for (let x = xStart5+textWidth(v9+v10+v9+v10)+30; x >= 0; x-= textWidth(v9+v10+v9+v10)) {
+                text(v9 + v10 + v9 + v10, x, lineHeight * 4);
+            }
+
+            for (let x = xStart6+textWidth(v11+v12); x >= 0; x-= textWidth(v11+v12)) {
+                text(v11 + v12, x, lineHeight * 5);
+            }
+            for (let x = xStart7+textWidth(v13+v14+v13+v14)+40; x >= 0; x-= textWidth(v13+v14+v13+v14)) {
+                text(v13 + v14 + v13 + v14, x, lineHeight * 6);
+            }
+
+            for (let x = xStart8+textWidth(v15+v16+v15+v16); x >= 0; x-= textWidth(v15+v16+v15+v16)) {
+                text(v15 + v16 + v15 + v16, x, lineHeight * 7);
+            }
+
+            for (let x = xStart9+textWidth(v17+v18+v17+v18)+60; x >= 0; x-= textWidth(v17+v18+v17+v18)) {
+                text(v17 + v18 + v17 + v18, x, lineHeight * 8);
+            }
+
+            for (let x = xStart10+textWidth(v19+v20+v19+v20); x >= 0; x-= textWidth(v19+v20+v19+v20)) {
+                text(v19 + v20 + v19 + v20, x, lineHeight * 9);
+            }
+
+            for (let x = xStart11+textWidth(v21+v22+v21+v22)+30; x >= 0; x-= textWidth(v21+v22+v21+v22)) {
+                text(v21 + v22 + v21 + v22, x, lineHeight * 10);
+            }
+
+            for (let x = xStart12+textWidth(v23+v24+v23+v24); x >= 0; x-= textWidth(v23+v24+v23+v24)) {
+                text(v23 + v24 + v23 + v24, x, lineHeight * 11);
+            }
+            for (let x = xStart13+textWidth(v25+v26+v25+v26)+40; x >= 0; x-= textWidth(v25+v26+v25+v26)) {
+                text(v25 + v26 + v25 + v26, x, lineHeight * 12);
+            }
+
+
+            if (millis() > prevTime + interval) {
+                eNd = false;
+
+                if (xStart1 < textWidth(v2)){
+                    let x1 = map(xStart1, 0, textWidth(v2), 0, PI);
+                    xStart1 = xStart1 + sTep + sin(x1)*sPeed;
+                } else if (xStart2 < textWidth(v4)) {
+                    let x1 = map(xStart2, 0, textWidth(v4), 0, PI);
+                    xStart2 = xStart2 + sTep + sin(x1)*sPeed;
+                } else if (xStart3 < textWidth(v6)) {
+                    let x1 = map(xStart3, 0, textWidth(v6), 0, PI);
+                    xStart3 = xStart3 + sTep + sin(x1)*sPeed;
+                } else if (xStart4 < textWidth(v8)) {
+                    let x1 = map(xStart4, 0, textWidth(v8), 0, PI);
+                    xStart4 = xStart4 + sTep + sin(x1)*sPeed;
+                } else if (xStart5 < textWidth(v10)) {
+                    let x1 = map(xStart5, 0, textWidth(v10), 0, PI);
+                    xStart5 = xStart5 + sTep + sin(x1)*sPeed;
+                } else if (xStart6 < textWidth(v12)) {
+                    let x1 = map(xStart6, 0, textWidth(v12), 0, PI);
+                    xStart6 = xStart6 + sTep + sin(x1)*sPeed;
+                } else if (xStart7 < textWidth(v14)) {
+                    let x1 = map(xStart7, 0, textWidth(v14), 0, PI);
+                    xStart7 = xStart7 + sTep + sin(x1)*sPeed;
+                } else if (xStart8 < textWidth(v16)){
+                    let x1 = map(xStart8, 0, textWidth(v16), 0, PI);
+                    xStart8 = xStart8 + sTep + sin(x1)*sPeed;
+                } else if (xStart9 < textWidth(v18)) {
+                    let x1 = map(xStart9, 0, textWidth(v18), 0, PI);
+                    xStart9 = xStart9 + sTep + sin(x1)*sPeed;
+                } else if (xStart10 < textWidth(v20)) {
+                    let x1 = map(xStart10, 0, textWidth(v20), 0, PI);
+                    xStart10 = xStart10 + sTep + sin(x1)*sPeed;
+                } else if (xStart11 < textWidth(v22)) {
+                    let x1 = map(xStart11, 0, textWidth(v22), 0, PI);
+                    xStart11 = xStart11 + sTep + sin(x1)*sPeed;
+                } else if (xStart12 < textWidth(v24)) {
+                    let x1 = map(xStart12, 0, textWidth(v24), 0, PI);
+                    xStart12 = xStart12 + sTep + sin(x1)*sPeed;
+                } else if (xStart13 < textWidth(v26)) {
+                    let x1 = map(xStart13, 0, textWidth(v26), 0, PI);
+                    xStart13 = xStart13 + sTep + sin(x1)*sPeed;
+                }else{
+                    eNd = true;
+                    if (xStart1 < textWidth(v1+v2)) {
+                        let x1 = map(xStart1, textWidth(v2), textWidth(v1+v2), 0, PI);
+                        xStart1 = xStart1 + sTep + sin(x1)*sPeed;
+                        // xStart1 = xStart1 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart2 < textWidth(v3+v4)) {
+                        let x1 = map(xStart2, textWidth(v4), textWidth(v3+v4), 0, PI);
+                        xStart2 = xStart2 + sTep + sin(x1)*sPeed;
+                        // xStart2 = xStart2 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart3 < textWidth(v5+v6)) {
+                        let x1 = map(xStart3, textWidth(v6), textWidth(v5+v6), 0, PI);
+                        xStart3 = xStart3 + sTep + sin(x1)*sPeed;
+                        // xStart3 = xStart3 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart4 < textWidth(v7+v8)) {
+                        let x1 = map(xStart4, textWidth(v8), textWidth(v7+v8), 0, PI);
+                        xStart4 = xStart4 + sTep + sin(x1)*sPeed;
+                        // xStart4 = xStart4 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart5 < textWidth(v9+v10)) {
+                        let x1 = map(xStart5, textWidth(v10), textWidth(v9+v10), 0, PI);
+                        xStart5 = xStart5 + sTep + sin(x1)*sPeed;
+                        // xStart5 = xStart5 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart6 < textWidth(v11+v12)) {
+                        let x1 = map(xStart6, textWidth(v12), textWidth(v11+v12), 0, PI);
+                        xStart6 = xStart6 + sTep + sin(x1)*sPeed;
+                        // xStart6 = xStart6 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart7 < textWidth(v13+v14)) {
+                        let x1 = map(xStart7, textWidth(v14), textWidth(v13+v14), 0, PI);
+                        xStart7 = xStart7 + sTep + sin(x1)*sPeed;
+                        // xStart7 = xStart7 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart1 < textWidth(v15+v16)){
+                        let x1 = map(xStart8, textWidth(v16), textWidth(v15+v16), 0, PI);
+                        xStart8 = xStart8 + sTep + sin(x1)*sPeed;
+                        // xStart1 = xStart1 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart2 < textWidth(v17+v18)) {
+                        let x1 = map(xStart9, textWidth(v18), textWidth(v17+v18), 0, PI);
+                        xStart9 = xStart9 + sTep + sin(x1)*sPeed;
+                        // xStart2 = xStart2 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart3 < textWidth(v19+v20)) {
+                        let x1 = map(xStart10, textWidth(v20), textWidth(v19+v20), 0, PI);
+                        xStart10 = xStart10 + sTep + sin(x1)*sPeed;
+                        // xStart3 = xStart3 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart4 < textWidth(v21+v22)) {
+                        let x1 = map(xStart11, textWidth(v22), textWidth(v21+v22), 0, PI);
+                        xStart11 = xStart11 + sTep + sin(x1)*sPeed;
+                        // xStart4 = xStart4 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart5 < textWidth(v23+v24)) {
+                        let x1 = map(xStart12, textWidth(v24), textWidth(v23+v24), 0, PI);
+                        xStart12 = xStart12 + sTep + sin(x1)*sPeed;
+                        // xStart5 = xStart5 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart6 < textWidth(v25+v26)) {
+                        let x1 = map(xStart13, textWidth(v26), textWidth(v25+v26), 0, PI);
+                        xStart13 = xStart13 + sTep + sin(x1)*sPeed;
+                        // xStart6 = xStart6 + sTep;
+                        eNd = false;
+                    }
+                    if (eNd == true) {
+                        xStart1 = 0;
+                        xStart2 = 0;
+                        xStart3 = 0;
+                        xStart4 = 0;
+                        xStart5 = 0;
+                        xStart6 = 0;
+                        xStart7 = 0;
+                        xStart8 = 0;
+                        xStart9 = 0;
+                        xStart10 = 0;
+                        xStart11 = 0;
+                        xStart12 = 0;
+                        xStart13 = 0;
+                        prevTime = millis();
+                    }
+                }
+            }
+        }
+        function mousePressed() {
+            start();
+        }
+    </script>
+
+    <style>
+        body
+        {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>

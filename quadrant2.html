@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quadrant 2</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@vv1.4.0/lib/p5.js" type="text/javascript"></script>
+    <script>
+        let v1 = "Branding—";
+        let v2 = "Content—";
+        let v3 = "Verbal Identity—";
+        let v4 = "Strategy—";
+        let v5 = " Naming—";
+        let v6 = "Art Direction—";
+        let v7 = "Insights—";
+        let v8 = "Packaging— ";
+        let v9 = "Research—";
+        let v10 = "Content—";
+        let v11 = "Moving Image—";
+        let v12 = "Launch—";
+        let v13 = " Positioning—";
+        let v14 = "Activation—";
+
+        let bg = 225;
+        let sPeed = 25;
+
+        let interval = 1000;
+        let prevTime;
+
+        let xStart1 = 0;
+        let xStart2 = 0;
+        let xStart3 = 0;
+        let xStart4 = 0;
+        let xStart5 = 0;
+        let xStart6 = 0;
+        let xStart7 = 0;
+
+        let sTep = 1;
+        let eNd = false;
+
+        let myFont;
+        function preload() {
+            myFont = loadFont('Canela-Light.woff');
+        }
+
+        function setup() {
+            frameRate(60);
+            createCanvas(400, 400);
+            prevTime = millis();
+        }
+
+        function draw() {
+            background(bg);
+            fill(0);
+            smooth();
+            let fsize = height / 7;
+            textSize(fsize);
+            textFont(myFont);
+            var lineHeight = fsize;
+
+            textAlign(RIGHT, TOP);
+            fill(0);
+            for (let x = xStart1+textWidth(v1+v2)+20; x >= 0; x-= textWidth(v1+v2)) {
+                text(v1 + v2, x, 0);
+            }
+
+            for (let x = xStart2+textWidth(v3+v4); x >= 0; x-= textWidth(v3+v4)) {
+                text(v3 + v4, x, lineHeight);
+            }
+
+            for (let x = xStart3+textWidth(v5+v6)+60; x >= 0; x-= textWidth(v5+v6)) {
+                text(v5 + v6, x, lineHeight * 2);
+            }
+
+            for (let x = xStart4+textWidth(v7+v8); x >= 0; x-= textWidth(v7+v8)) {
+                text(v7 + v8, x, lineHeight * 3);
+            }
+
+            for (let x = xStart5+textWidth(v9+v10)+30; x >= 0; x-= textWidth(v9+v10)) {
+                text(v9 + v10, x, lineHeight * 4);
+            }
+
+            for (let x = xStart6+textWidth(v11+v12); x >= 0; x-= textWidth(v11+v12)) {
+                text(v11 + v12, x, lineHeight * 5);
+            }
+            for (let x = xStart7+textWidth(v13+v14)+40; x >= 0; x-= textWidth(v13+v14)) {
+                text(v13 + v14, x, lineHeight * 6);
+            }
+
+            if (millis() > prevTime + interval) {
+                eNd = false;
+
+                if (xStart1 < textWidth(v2)){
+                    let x1 = map(xStart1, 0, textWidth(v2), 0, PI);
+                    xStart1 = xStart1 + sTep + sin(x1)*sPeed;
+                } else if (xStart2 < textWidth(v4)) {
+                    let x1 = map(xStart2, 0, textWidth(v4), 0, PI);
+                    xStart2 = xStart2 + sTep + sin(x1)*sPeed;
+                } else if (xStart3 < textWidth(v6)) {
+                    let x1 = map(xStart3, 0, textWidth(v6), 0, PI);
+                    xStart3 = xStart3 + sTep + sin(x1)*sPeed;
+                } else if (xStart4 < textWidth(v8)) {
+                    let x1 = map(xStart4, 0, textWidth(v8), 0, PI);
+                    xStart4 = xStart4 + sTep + sin(x1)*sPeed;
+                } else if (xStart5 < textWidth(v10)) {
+                    let x1 = map(xStart5, 0, textWidth(v10), 0, PI);
+                    xStart5 = xStart5 + sTep + sin(x1)*sPeed;
+                } else if (xStart6 < textWidth(v12)) {
+                    let x1 = map(xStart6, 0, textWidth(v12), 0, PI);
+                    xStart6 = xStart6 + sTep + sin(x1)*sPeed;
+                } else if (xStart7 < textWidth(v14)) {
+                    let x1 = map(xStart7, 0, textWidth(v14), 0, PI);
+                    xStart7 = xStart7 + sTep + sin(x1)*sPeed;
+                } else {
+                    eNd = true;
+                    if (xStart1 < textWidth(v1+v2)){
+                        let x1 = map(xStart1, textWidth(v2), textWidth(v1+v2), 0, PI);
+                        xStart1 = xStart1 + sTep + sin(x1)*sPeed;
+                        // xStart1 = xStart1 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart2 < textWidth(v3+v4)) {
+                        let x1 = map(xStart2, textWidth(v4), textWidth(v3+v4), 0, PI);
+                        xStart2 = xStart2 + sTep + sin(x1)*sPeed;
+                        // xStart2 = xStart2 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart3 < textWidth(v5+v6)) {
+                        let x1 = map(xStart3, textWidth(v6), textWidth(v5+v6), 0, PI);
+                        xStart3 = xStart3 + sTep + sin(x1)*sPeed;
+                        // xStart3 = xStart3 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart4 < textWidth(v7+v8)) {
+                        let x1 = map(xStart4, textWidth(v8), textWidth(v7+v8), 0, PI);
+                        xStart4 = xStart4 + sTep + sin(x1)*sPeed;
+                        // xStart4 = xStart4 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart5 < textWidth(v9+v10)) {
+                        let x1 = map(xStart5, textWidth(v10), textWidth(v9+v10), 0, PI);
+                        xStart5 = xStart5 + sTep + sin(x1)*sPeed;
+                        // xStart5 = xStart5 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart6 < textWidth(v11+v12)) {
+                        let x1 = map(xStart6, textWidth(v12), textWidth(v11+v12), 0, PI);
+                        xStart6 = xStart6 + sTep + sin(x1)*sPeed;
+                        // xStart6 = xStart6 + sTep;
+                        eNd = false;
+                    }
+                    if (xStart7 < textWidth(v13+v14)) {
+                        let x1 = map(xStart7, textWidth(v14), textWidth(v13+v14), 0, PI);
+                        xStart7 = xStart7 + sTep + sin(x1)*sPeed;
+                        // xStart7 = xStart7 + sTep;
+                        eNd = false;
+                    }
+                    if (eNd == true) {
+                        xStart1 = 0;
+                        xStart2 = 0;
+                        xStart3 = 0;
+                        xStart4 = 0;
+                        xStart5 = 0;
+                        xStart6 = 0;
+                        xStart7 = 0;
+                        prevTime = millis();
+                    }
+                }
+            }
+
+        }
+        function mousePressed() {
+            start();
+        }
+    </script>
+
+    <style>
+        body
+        {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
